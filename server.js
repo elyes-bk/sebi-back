@@ -1,5 +1,5 @@
 const app = require('./app');
-const port = 8080;
+//const port = 8080;
 const hostname = '127.0.0.1'
 const { Sequelize } = require('sequelize');
 const express = require('express');
@@ -12,6 +12,7 @@ const ScoreFacile = require("./models/ScoreFacile");
 const ScoreDifficile = require("./models/ScoreDifficile");
 
 const url = process.env.URL;
+const PORT = process.env.PORT || 3000;
 
 
 const cors = require('cors');
@@ -154,7 +155,7 @@ app.get("/api/james/scores/difficile", async (req, res) => {
   }
 });
 
-app.listen(port, hostname, () => {
+app.listen(PORT, () => {
     //console.log(`Server is listening on port ${hostname}:${port}`)
-    console.log(`Server is listening on port ${URL}`)
+    console.log(`Server is listening on port ${PORT}`)
 });
